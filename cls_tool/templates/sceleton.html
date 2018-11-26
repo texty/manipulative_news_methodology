@@ -1,0 +1,25 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Texty Classifier</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+
+    <script src="{% static 'libs/jquery3.2.1.js' %}"></script>
+    <script src="{% static 'libs/popper.js' %}"></script>
+    <script src="{% static 'libs/bootstrap-4.0.0-beta.2-dist/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'libs/bootstrap-4.0.0-beta.2-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/font-awesome-4.7.0/css/font-awesome.min.css'%}">
+
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+{% block content %}
+{% endblock content %}
+
+<script src="{% static 'classify_js.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+{% extends "sceleton.html" %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row align-items-middle mt-2 mb-3">
+        <div class="col-1 text-center">
+            {% url 'newsurls:list_done' as done_url %}
+            <a href="{{ done_url }}">
+                <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="col-10" id="heading">
+            <h1><a href="{{ cls_article.article.real_url }}" target="_blank" class="link">
+                #{{ cls_article.article.html_id }}</a>: {{ cls_article.article.ra_title }}</h1>
+            <p class="small">класифіковано {{ cls_article.classified_at | date:'Y-m-d H:i' }}</p>
+        </div>
+        <div class="w-100"></div>
+        <div class="jumbotron p-1 offset-1 justify-self-center">
+            <p class="font-weight-bold">Режим редагування</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+    <div class="row mb-5">
+        <div class="col-6" id="article_text">
+            {% autoescape off %} {{ cls_article.article.ra_summary }} {% endautoescape %}
+        </div>
+        <div class="col-6" id="options">
+
+            <form action="" method="post">
+                <div id="form-div" class="row justify-content-left" data-explanations="{{ type_explanations }}">
+                    {% csrf_token %}
+
+                    {% for f, l in form.fields.types.choices %}
+
+                    <div class="col-12 faketype">
+                        <label class="btn btn-outline-dark text-left modal_button" for="id_types_{{ f }}"
+                        data-target="#explanation_modal" data-title="{{ l }}">
+                            <input id="id_types_{{ f }}" name="types" class="faketype" type="checkbox" value="{{ f }}">
+                            {{ l }}
+                        </label>
+                    </div>
+
+                    {% endfor %}
+
+                    <div class="w-100">
+                        <label for="id_article">
+                            {{ form.article }}
+                        </label>
+                    </div>
+
+                    <div class="col-12 text-right pb-5 mb-5">
+                        <input id="submit_form" type="submit" class="btn btn-primary" value="Готово">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row footer pt-2 pr-5 pl-5 fixed-bottom justify-content-between">
+        <div class="col-3">
+            <p class="font-italic">Користувач: {{ cls_new.bee }}</p>
+        </div>
+        <div class="col-3">
+            <p class="font-weight-bold small"><a class="link" target="_blank" href="https://www.youtube.com/user/simonscat/videos">
+                Кошенята за шкідливість <i class="fa fa-heart-o" aria-hidden="true"></i>  <i class="fa fa-paw" aria-hidden="true"></i>
+            </a></p>
+        </div>
+        <div class="col-6 text-right">
+            <button class="btn btn-outline-dark" id="feedback_button" data-target="#feedback_modal">Коментувати цю новину</button>
+        </div>
+    </div>
+</div>
+
+<form id="tagged_html_form" action="" method="post">
+    {% csrf_token %}
+    {{ art_html_form }}
+</form>
+
+<div class="modal fade" id="explanation_modal" tabindex="-1" role="dialog" aria-labelledby="explanation_modal_label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="explanation_modal_label"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="explanation_modal_description">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="feedback_modal" tabindex="-1" role="dialog" aria-labelledby="feedback_modal_label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="feedback_modal_label">Коментар до тексту</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="feedback_modal_description">
+            <form action="" method="post">
+                <div id="feedback-div" class="row justify-content-center">
+                    {% csrf_token %}
+                    <div class="col-12">
+                        <p>Напишіть коментар</p>
+                        {{ feedback.comment }}
+                        {{ feedback.article }}
+                    </div>
+                    <div class="text-center col-12">
+                        <button id="submit_feedback" type="button" class="btn btn-primary" data-dismiss="modal">Надіслати</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+                    </div>
+                </div>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        {% for t in form.types.value %}
+        $('#id_types_' + {{ t }})
+            .closest('label')
+            .click();
+
+        {% endfor %}
+    });
+</script>
+
+<script>
+    $('#submit_feedback').click(function () {
+        var form_data = $(this).closest('form').serializeArray();
+        $.ajax({
+            url: '{% url 'newsurls:feedback' %}',
+            type : "POST",
+            data: {
+                'csrfmiddlewaretoken': form_data[0].value,
+                'article': form_data[2].value,
+                'comment': form_data[1].value
+            },
+            dataType: 'json'
+        });
+    });
+</script>
+
+
+
+{% endblock content %}

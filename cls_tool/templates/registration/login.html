@@ -1,0 +1,50 @@
+{% extends "sceleton.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-5"></div>
+    {% if form.errors %}
+    <div class="row justify-content-center">
+        <div class="col-8 alert alert-danger" role="alert">
+            Невірний пароль. Спробуйте знову, або зверніться до Наді, якщо забули пароль :)
+        </div>
+    </div>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+        <div class="row">
+            <div class="col-12">
+                <p>Your account doesn't have access to this page. To proceed,
+                please login with an account that has access.</p>
+            </div>
+        </div>
+        {% else %}
+        <div class="row">
+            <div class="col-12">
+                <p>Please login to see this page.</p>
+            </div>
+        </div>
+        {% endif %}
+    {% endif %}
+
+    <div class="row justify-content-center">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+
+            <div class="col-8 form-group">Логін</div>
+            <div class="col-8 mb-4">{{ form.username }}</div>
+
+            <div class="col-8">Пароль</div>
+            <div class="col-8">{{ form.password }}</div>
+
+           <div class="col-8 mt-4">
+               <input class="btn btn-primary" type="submit" value="Логін"/>
+               <input type="hidden" name="next" value="{{ next }}" />
+           </div>
+        </form>
+    </div>
+
+
+</div>
+{% endblock %}

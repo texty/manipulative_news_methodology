@@ -1,0 +1,105 @@
+{% extends "sceleton.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-between mt-4">
+        <div class="col-auto">
+            <a href="/classifier/" class="link">
+                <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="col">
+            <h3>Останні класифіковані тексти</h3>
+        </div>
+        <div class="col-12">
+            <form action="{% url 'newsurls:list_done' %}" method="get" class="form-inline">
+                <div class="form-row mb-2 align-items-end">
+                    <div class="col-8">
+                        <select class="custom-select" name="type">
+                            <option value="all">Всі</option>
+                            {% for t in types %}
+
+                            {% if t.label == selected_type %}
+                            <option selected value="{{ t }}">{{ t.label }}</option>
+                            {% else %}
+                            <option value="{{ t }}">{{ t.label }}</option>
+                            {% endif %}
+
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary">Показати вибрані типи</button>
+                    </div>
+                </div>
+
+
+                <!--<select class="form-control" name="types">-->
+                    <!--{% for t in types %}-->
+                        <!--<option value="{{ t }}">{{ t.label }}</option>-->
+                    <!--{% endfor %}-->
+                <!--</select>-->
+                <!--<input type="submit" class="btn btn-primary" name="types" value="Показати вибрані типи">-->
+            </form>
+        </div>
+
+        <div class="w-100 mb-3"></div>
+
+        <div class="col-12">
+            <ul class="list-group">
+            {% for new in done %}
+
+                <li class="list-group-item">
+                    <span class="small pr-3">{{ new.classified_at | date:'Y-m-d H:i' }} </span>
+                    <a href="/classifier/edit/{{ new.article.html_id }}" class="link"> #{{ new.article.html_id }} {{ new.article.ra_title }}</a>
+                    <br/>
+                    {% for t in new.types.all %}
+                        <span class="badge badge-secondary"> {{ t.label }} </span>
+                    {% endfor %}
+                </li>
+
+            {% endfor %}
+            </ul>
+        </div>
+
+        <nav class="col-12 mt-4" aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                {% if done.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1">Початок</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ done.previous_page_number }}">{{ done.previous_page_number }}</a>
+                </li>
+                {% endif %}
+                <li class="page-item active">
+                    <a class="page-link" href="#">{{ done.number }}</a>
+                </li>
+                {% if done.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ done.next_page_number }}">{{ done.next_page_number }}</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ done.paginator.num_pages }}">Остання {{ done.paginator.num_pages }}</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		var $pagination = $('a.page-link');
+		$pagination.map(function (e) {
+			var $this = $(this);
+			var href = $this.attr('href');
+			if ( href !== '#' ) {
+				$this.attr('href', href  + '&type=' + $('form option:selected').attr('value'));
+			}
+		});
+	})
+</script>
+
+{% endblock %}

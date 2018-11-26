@@ -1,0 +1,21 @@
+{
+  "name": "readability_server",
+  "version": "1.0.0",
+  "description": "Small express.js app to process raw htmls with Mozilla Readability ",
+  "main": "ra_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "readability",
+    "express"
+  ],
+  "author": "Nadiia Romanenko",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsdom": "^13.0.0",
+    "readability": "git+https://github.com/mozilla/readability.git"
+  }
+}

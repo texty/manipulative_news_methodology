@@ -1,0 +1,1 @@
+postgresql+psycopg2://username:password@111.222.0.333:5432/dbname

@@ -1,0 +1,82 @@
+$bgcol: #ffffff;
+$fontcol: #0e0e0e;
+$linkcol: #430971;
+$selectcol: #FFA121;
+
+body {
+  color: $fontcol;
+}
+
+div.footer {
+  background-color: lighten( $linkcol, 65% ) !important;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+i {
+  color: $linkcol;
+}
+
+.link {
+  color: $linkcol;
+}
+
+.link:hover {
+  color: $selectcol;
+}
+
+input.faketype {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+div.faketype label {
+  white-space: normal;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+input[type="submit"] {
+  color: $fontcol;
+}
+
+#ner_tagger {
+  position: absolute;
+  z-index: 100000;
+  display: none;
+  background-color: $bgcol;
+  -webkit-box-shadow: 0px 0px 25px 3px lighten( $linkcol, 50% );
+  -moz-box-shadow: 0px 0px 25px 3px lighten( $linkcol, 50% );
+  box-shadow: 0px 0px 25px 3px lighten( $linkcol, 50% );
+  padding: 5px;
+  border-radius: 4px;
+}
+
+nerperson {
+  background-color: #ffb865;
+  cursor: pointer;
+}
+
+nerlocation {
+  background-color: #afdc61;
+  cursor: pointer;
+}
+
+nerorganisation {
+  background-color: #a3d0dc;
+  cursor: pointer;
+}
+
+[data-issource="true"] {
+  border: 1.5px solid $linkcol;
+}
