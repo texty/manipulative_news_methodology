@@ -90,7 +90,7 @@ in final ranking we left only sites with more than 200 relevant news and more th
 Values of classifier prediction:
 
 | Type              | Uk       | Ru     |
-| ------------------|-------- :| ------:|
+|-------------------|----------|--------|
 | relevance         | < 0.55   | < 0.67 |
 | emotional         | > 0.36   | > 0.36 |
 | arguments         | > 0.5    | > 0.55 |
