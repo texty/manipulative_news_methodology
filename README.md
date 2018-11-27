@@ -7,8 +7,6 @@
 * [`grouped_stats_by_site.csv`](grouped_stats_by_site.csv) - grouped results for the whole database of news. In final product we do not consider Russian sites, big Ukrainian sites, and sites with less than 25% of manipulative news
 * [`htmls_sample.jl.bz`](htmls_sample.jl.bz) - data sample. `html_id` - key field, `ra_summary` - readability html of article page, `real_url` - link to article
 * `.._annotation.csv` - annotated sample of news htmls. `html_id` - key id of article in `htmls_sample.jl.bz`, other columns - annotations
-* [`my_fb.json`](my_fb.json) - credentials for Facebook feed collection script
-* [`psql_engine.txt`](psql_engine.txt) - Postgresql credentials example to use in data collection and preprocessing scripts
 * [`cls_tool`](/annotator) - Django site for annotation
 
 ### Data
