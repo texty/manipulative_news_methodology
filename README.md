@@ -9,8 +9,9 @@
 * `.._annotation.csv` - annotated sample of news htmls. `html_id` - key id of article in `htmls_sample.jl.bz`, other columns - annotations
 * [`cls_tool`](/annotator) - Django site for annotation
 
-###Table of contents
- * [Data](###data)
+### Table of contents
+ * [Data](### data)
+ * [Annotation](### Annotation)
 
 ### Data
 Scripts for data collection and their description are in [`data_collection`](/data_collection) folder.<br>
