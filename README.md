@@ -82,6 +82,17 @@ Language model containes:
 Final feedforward layer for language model training is prediction of the news word.<br>
 For classification we change the last layer to feedforward network with 50 and the 2 cells, since we have 2 categories to classify. In classification we changed default categorical cross-entropy loss to binary cross-entropy, and softmax activation to sigmoid in order to perform multilabel classification.
 
+#### You can download and use all models according to project's license
+* [Wikipedia language model for Russian, forward LSTM](http://texty.org.ua/d/2018/mnews/models/fwd_ru_lm.zip)
+* [Wikipedia language model for Ukrainian, forward LSTM](http://texty.org.ua/d/2018/mnews/models/fwd_uk_lm.zip)
+* [Finetuned on news corpus Wikipedia language model for Russian](http://texty.org.ua/d/2018/mnews/models/fwd_ru_finetuned_lm.zip)
+* [Finetuned on news corpus Wikipedia language model for Ukrainian](http://texty.org.ua/d/2018/mnews/models/fwd_uk_finetuned_lm.zip)
+* [Finetuned on news corpus Wikipedia language model for Russian, encoder only](http://texty.org.ua/d/2018/mnews/models/fwd_ru_finetuned_lm_enc.zip)
+* [Finetuned on news corpus Wikipedia language model for Ukrainian, encoder only](http://texty.org.ua/d/2018/mnews/models/fwd_uk_finetuned_lm_enc.zip)
+* [Classifier of relevant news in Russian](http://texty.org.ua/d/2018/mnews/models/ru_is_other_cls.zip)
+* [Classifier of relevant news in Ukrainian](http://texty.org.ua/d/2018/mnews/models/uk_is_other_cls.zip)
+* [Classifier of types of manipulation for Russian](http://texty.org.ua/d/2018/mnews/models/ru_arg_emo_cls.zip)
+* [Classifier of types of manipulation for Ukrainian](http://texty.org.ua/d/2018/mnews/models/uk_emo_arg_cls.zip)
 
 ### Final ranking
 
