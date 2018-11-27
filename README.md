@@ -1,12 +1,12 @@
 ## Texty manipulative news project - methodology
 
 ### Repository structure
-* [`classifier`](tree/master/classifier) - scripts for training and applying language model classifier
-* [`data_collection`](tree/master//data_collection) - scripts to load RSS feeds, Facebook feeds of selected sites, and scrapy project to load html for each article
-* [`data_processing`](tree/maste/data_processing) - scripts to prepare data for classifier
+* [`classifier`](/classifier) - scripts for training and applying language model classifier
+* [`data_collection`](/data_collection) - scripts to load RSS feeds, Facebook feeds of selected sites, and scrapy project to load html for each article
+* [`data_processing`](/data_processing) - scripts to prepare data for classifier
 * [`grouped_stats_by_site.csv`](grouped_stats_by_site.csv) - grouped results for the whole database of news. In final product we do not consider Russian sites, big Ukrainian sites, and sites with less than 25% of manipulative news
 * `.._annotation.csv` - annotated sample of news htmls. `html_id` - key id of article in `htmls_sample.jl.bz`, other columns - annotations
-* [`cls_tool`](tree/master/cls_tool) - Django site for annotation
+* [`cls_tool`](/cls_tool) - Django site for annotation
 
 ### Table of contents
  1. [Data](#data)
