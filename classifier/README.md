@@ -2,7 +2,7 @@
 
 * `training.ipynb` - notebook with classifier of relevant-irrelevant articles, and multilabel classifier of manipulative texts, both in Ukrainian and Russian
 * `itos_<lang>.pkl` - token dictionaries
-* `ru/`, `uk/` - folders with fastai models. Put models in <lang>/models - links to pretrained LM and classifiers:
+* `ru/`, `uk/` - folders with fastai models. Put models in \<lang\>/models - links to pretrained LM and classifiers:
   
   * [Wikipedia language model for Russian, forward LSTM](http://texty.org.ua/d/2018/mnews/models/fwd_ru_lm.zip)
   * [Wikipedia language model for Ukrainian, forward LSTM](http://texty.org.ua/d/2018/mnews/models/fwd_uk_lm.zip)
