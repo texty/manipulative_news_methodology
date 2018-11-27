@@ -1,4 +1,5 @@
-## Scripts, models and data for training language model-based classifier of manipulative news texts
+## Scripts, models and data to traine language model-based classifier of manipulations in news.
+Based on [fast.ai](https://github.com/fastai/fastai) library, version 0.7.0.
 
 * `training.ipynb` - notebook with classifier of relevant-irrelevant articles, and multilabel classifier of manipulative texts, both in Ukrainian and Russian
 * `itos_<lang>.pkl` - token dictionaries
