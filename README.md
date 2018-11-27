@@ -5,7 +5,6 @@
 * [`data_collection`](/data_collection) - scripts to load RSS feeds, Facebook feeds of selected sites, and scrapy project to load html for each article
 * [`data_processing`](/data_processing) - scripts to prepare data for classifier
 * [`grouped_stats_by_site.csv`](grouped_stats_by_site.csv) - grouped results for the whole database of news. In final product we do not consider Russian sites, big Ukrainian sites, and sites with less than 25% of manipulative news
-* [`htmls_sample.jl.bz`](htmls_sample.jl.bz) - data sample. `html_id` - key field, `ra_summary` - readability html of article page, `real_url` - link to article
 * `.._annotation.csv` - annotated sample of news htmls. `html_id` - key id of article in `htmls_sample.jl.bz`, other columns - annotations
 * [`cls_tool`](/annotator) - Django site for annotation
 
@@ -17,6 +16,8 @@
 
 ### Data
 Scripts for data collection and their description are in [`data_collection`](/data_collection) folder.<br>
+
+Data can be downloaded [here](#)(4Gb). `html_id` - key field, `ra_summary` - readability html of article page, `real_url` - link to article.<br>
 
 Totally we collected 362 500 articles in Ukrainian and 2 745 700 articles in Russian. Next we filtered out articles not about Ukrainian politics and society (excluded celebrities, international news etc.). There were left 1 174 000 relevant articles in Russian and 227 400 articles in Ukrainian. Websites in final ranking totally produced 289 300 relevant articles.
 
