@@ -4,7 +4,7 @@
 * `itos_<lang>.pkl` - token dictionaries
 * `ru/`, `uk/` - folders with fastai models. Put models in <lang>/models - links to pretrained LM and classifiers:
   
-  * [Wikipedia language model for Russian, forward LSTM](http://texty.org.ua/d/2018/mnews/models/fwd_ru_lm.zip)
+* [Wikipedia language model for Russian, forward LSTM](http://texty.org.ua/d/2018/mnews/models/fwd_ru_lm.zip)
 * [Wikipedia language model for Ukrainian, forward LSTM](http://texty.org.ua/d/2018/mnews/models/fwd_uk_lm.zip)
 * [Finetuned on news corpus Wikipedia language model for Russian](http://texty.org.ua/d/2018/mnews/models/fwd_ru_finetuned_lm.zip)
 * [Finetuned on news corpus Wikipedia language model for Ukrainian](http://texty.org.ua/d/2018/mnews/models/fwd_uk_finetuned_lm.zip)
