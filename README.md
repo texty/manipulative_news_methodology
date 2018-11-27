@@ -10,8 +10,10 @@
 * [`cls_tool`](/annotator) - Django site for annotation
 
 ### Table of contents
- * [Data](### data)
- * [Annotation](### Annotation)
+ 1. [Data](#data)
+ 2. [Annotation](#annotation)
+ 3. [Classification](#classification)
+ 4. [Final ranking](#final-ranking)
 
 ### Data
 Scripts for data collection and their description are in [`data_collection`](/data_collection) folder.<br>
