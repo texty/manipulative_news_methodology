@@ -4,7 +4,7 @@
 * [`classifier`](/classifier) - scripts for training and applying language model classifier
 * [`data_collection`](/data_collection) - scripts to load RSS feeds, Facebook feeds of selected sites, and scrapy project to load html for each article
 * [`data_processing`](/data_processing) - scripts to prepare data for classifier
-* [Aggregated ranking](https://docs.google.com/spreadsheets/d/114Anuo8eREUVj3LscPaZcQ7fpvIzxti_virynhUVftI/edit#gid=0) - grouped results for the whole database of news. In final product we do not consider Russian sites, big Ukrainian sites, and sites with less than 25% of manipulative news
+* [Aggregated ranking](https://docs.google.com/spreadsheets/d/114Anuo8eREUVj3LscPaZcQ7fpvIzxti_virynhUVftI/edit#gid=0){:target="_blank"} - grouped results for the whole database of news. In final product we do not consider Russian sites, big Ukrainian sites, and sites with less than 25% of manipulative news
 * `.._annotation.csv` - annotated sample of news htmls. `html_id` - key id of article in `htmls_sample.jl.bz`, other columns - annotations
 * [`cls_tool`](/cls_tool) - Django site for annotation
 
@@ -17,13 +17,13 @@
 ### Data
 Scripts for data collection and their description are in [`data_collection`](/data_collection) folder.<br>
 
-Data can be downloaded [here](#)(4Gb). `html_id` - key field, `ra_summary` - readability html of article page, `real_url` - link to article.<br>
+Data can be downloaded [here](#){:target="_blank"}(4Gb). `html_id` - key field, `ra_summary` - readability html of article page, `real_url` - link to article.<br>
 
 Totally we collected 362 500 articles in Ukrainian and 2 745 700 articles in Russian. Next we filtered out articles not about Ukrainian politics and society (excluded celebrities, international news etc.). There were left 1 174 000 relevant articles in Russian and 227 400 articles in Ukrainian. Websites in final ranking totally produced 289 300 relevant articles.
 
 Data for the project are news from around 200 websites, collected from December 2017 until Nowember 2018. For each site we collected RSS feed every hour as well as daily Facebook feeds. Breaks occured several times because of technical reasons.<br>
 
-For every link from RSS or Facebook feed of site's page we downloaded full text and processed it using readability (by [Mozilla](https://github.com/mozilla/readability), and [Python readability](https://pypi.org/project/readability-lxml)) algorithm. Readability parsing errors occure in less than 5% of cases, without significant error rate for individual websites. Next we removed html tags and tokenized text.
+For every link from RSS or Facebook feed of site's page we downloaded full text and processed it using readability (by [Mozilla](https://github.com/mozilla/readability){:target="_blank"}, and [Python readability](https://pypi.org/project/readability-lxml){:target="_blank"}) algorithm. Readability parsing errors occure in less than 5% of cases, without significant error rate for individual websites. Next we removed html tags and tokenized text.
 
 ### Annotation
 Please find annotation tool in [`annotator`](/annotator) folder.<br>
@@ -74,9 +74,9 @@ Finally we detected only emotional manipulations and manipulative arguments. Th 
 
 [`classifier`](/classifier) folder containes links to pretrained models, classification scripts, instructions on how to download libraries, and test datasets.<br>
 
-We tried various NLP approaches to detect manipulation in news: bag-of-words and document vectors machine learning models, and LSTM on word vectors. Finally we used text classification with language model developed by [fast.ai](http://nlp.fast.ai/classification/2018/05/15/introducting-ulmfit.html). Code for training language models on Wikipedia corpus can be found [here](https://github.com/fastai/fastai/tree/master/courses/dl2/imdb_scripts).<br>
+We tried various NLP approaches to detect manipulation in news: bag-of-words and document vectors machine learning models, and LSTM on word vectors. Finally we used text classification with language model developed by [fast.ai](http://nlp.fast.ai/classification/2018/05/15/introducting-ulmfit.html){:target="_blank"}. Code for training language models on Wikipedia corpus can be found [here](https://github.com/fastai/fastai/tree/master/courses/dl2/imdb_scripts){:target="_blank"}.<br>
 
-We used example code from [fast.ai course](https://github.com/fastai/fastai/blob/master/courses/dl2/imdb.ipynb) to train classifiers and found most of defaults working best for our data. We increased dropouts for training Ukrainian language classifier and added multilabel final layer to detect multiple manipulation types at once (multilabel classifier was as accurate as individual classifiers for each manipulation type or better).
+We used example code from [fast.ai course](https://github.com/fastai/fastai/blob/master/courses/dl2/imdb.ipynb){:target="_blank"} to train classifiers and found most of defaults working best for our data. We increased dropouts for training Ukrainian language classifier and added multilabel final layer to detect multiple manipulation types at once (multilabel classifier was as accurate as individual classifiers for each manipulation type or better).
 
 Language model containes:
 1. input layer of vocabulary size (up to 60 000 tokens that occur more than 10 times)
@@ -88,16 +88,16 @@ Final feedforward layer for language model training is prediction of the news wo
 For classification we change the last layer to feedforward network with 50 and the 2 cells, since we have 2 categories to classify. In classification we changed default categorical cross-entropy loss to binary cross-entropy, and softmax activation to sigmoid in order to perform multilabel classification.
 
 #### You can download and use all models according to project's license
-* [Wikipedia language model for Russian, forward LSTM](http://texty.org.ua/d/2018/mnews/models/fwd_ru_lm.zip)
-* [Wikipedia language model for Ukrainian, forward LSTM](http://texty.org.ua/d/2018/mnews/models/fwd_uk_lm.zip)
-* [Finetuned on news corpus Wikipedia language model for Russian](http://texty.org.ua/d/2018/mnews/models/fwd_ru_finetuned_lm.zip)
-* [Finetuned on news corpus Wikipedia language model for Ukrainian](http://texty.org.ua/d/2018/mnews/models/fwd_uk_finetuned_lm.zip)
-* [Finetuned on news corpus Wikipedia language model for Russian, encoder only](http://texty.org.ua/d/2018/mnews/models/fwd_ru_finetuned_lm_enc.zip)
-* [Finetuned on news corpus Wikipedia language model for Ukrainian, encoder only](http://texty.org.ua/d/2018/mnews/models/fwd_uk_finetuned_lm_enc.zip)
-* [Classifier of relevant news in Russian](http://texty.org.ua/d/2018/mnews/models/ru_is_other_cls.zip)
-* [Classifier of relevant news in Ukrainian](http://texty.org.ua/d/2018/mnews/models/uk_is_other_cls.zip)
-* [Classifier of types of manipulation for Russian](http://texty.org.ua/d/2018/mnews/models/ru_arg_emo_cls.zip)
-* [Classifier of types of manipulation for Ukrainian](http://texty.org.ua/d/2018/mnews/models/uk_emo_arg_cls.zip)
+* [Wikipedia language model for Russian, forward LSTM](http://texty.org.ua/d/2018/mnews/models/fwd_ru_lm.zip){:target="_blank"}
+* [Wikipedia language model for Ukrainian, forward LSTM](http://texty.org.ua/d/2018/mnews/models/fwd_uk_lm.zip){:target="_blank"}
+* [Finetuned on news corpus Wikipedia language model for Russian](http://texty.org.ua/d/2018/mnews/models/fwd_ru_finetuned_lm.zip){:target="_blank"}
+* [Finetuned on news corpus Wikipedia language model for Ukrainian](http://texty.org.ua/d/2018/mnews/models/fwd_uk_finetuned_lm.zip){:target="_blank"}
+* [Finetuned on news corpus Wikipedia language model for Russian, encoder only](http://texty.org.ua/d/2018/mnews/models/fwd_ru_finetuned_lm_enc.zip){:target="_blank"}
+* [Finetuned on news corpus Wikipedia language model for Ukrainian, encoder only](http://texty.org.ua/d/2018/mnews/models/fwd_uk_finetuned_lm_enc.zip){:target="_blank"}
+* [Classifier of relevant news in Russian](http://texty.org.ua/d/2018/mnews/models/ru_is_other_cls.zip){:target="_blank"}
+* [Classifier of relevant news in Ukrainian](http://texty.org.ua/d/2018/mnews/models/uk_is_other_cls.zip){:target="_blank"}
+* [Classifier of types of manipulation for Russian](http://texty.org.ua/d/2018/mnews/models/ru_arg_emo_cls.zip){:target="_blank"}
+* [Classifier of types of manipulation for Ukrainian](http://texty.org.ua/d/2018/mnews/models/uk_emo_arg_cls.zip){:target="_blank"}
 
 ### Final ranking
 
