@@ -4,7 +4,7 @@
 * [`classifier`](/classifier) - scripts for training and applying language model classifier
 * [`data_collection`](/data_collection) - scripts to load RSS feeds, Facebook feeds of selected sites, and scrapy project to load html for each article
 * [`data_processing`](/data_processing) - scripts to prepare data for classifier
-* [Aggregated ranking](https://docs.google.com/spreadsheets/d/114Anuo8eREUVj3LscPaZcQ7fpvIzxti_virynhUVftI/edit#gid=0){:target="_blank"} - grouped results for the whole database of news. In final product we do not consider Russian sites, big Ukrainian sites, and sites with less than 25% of manipulative news
+* [Aggregated ranking](https://docs.google.com/spreadsheets/d/114Anuo8eREUVj3LscPaZcQ7fpvIzxti_virynhUVftI/edit#gid=0) - grouped results for the whole database of news. In final product we do not consider Russian sites, big Ukrainian sites, and sites with less than 25% of manipulative news
 * `.._annotation.csv` - annotated sample of news htmls. `html_id` - key id of article in `htmls_sample.jl.bz`, other columns - annotations
 * [`cls_tool`](/cls_tool) - Django site for annotation
 
