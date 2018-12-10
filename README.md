@@ -19,7 +19,7 @@ Scripts for data collection and their description are in [`data_collection`](/da
 
 Data can be downloaded [here](http://texty.org.ua/d/2018/share/mnews/data_to_publish.jl.bz2)(1.4Gb). `html_id` - key field, `ra_summary` - readability html of article page, `real_url` - link to article.<br>
 
-Totally we collected 362 500 articles in Ukrainian and 2 745 700 articles in Russian. Next we filtered out articles not about Ukrainian politics and society (excluded celebrities, international news etc.). There were left 1 174 000 relevant articles in Russian and 227 400 articles in Ukrainian. Websites in final ranking totally produced 289 300 relevant articles.
+Totally we collected 306 500 articles in Ukrainian and 2 301 000 articles in Russian. Next we filtered out articles not about Ukrainian politics and society (excluded celebrities, international news etc.). There were left 1 174 000 relevant articles in Russian and 227 400 articles in Ukrainian. Websites in final ranking totally produced 289 300 relevant articles.
 
 Data for the project are news from around 200 websites, collected from December 2017 until Nowember 2018. For each site we collected RSS feed every hour as well as daily Facebook feeds. Breaks occured several times because of technical reasons.<br>
 
