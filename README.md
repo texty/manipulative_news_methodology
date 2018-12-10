@@ -67,7 +67,7 @@ Inintially we used the following labels for annotation, text exactly as it was w
 Тексти, що не містять фактів/думок про внутрішню або зовнішню політичну ситуацію, не є актуальними в українському контексті, не містять конспірології. Спорт, світське життя, технології, кримінальна хроніка, милі тваринки, пости в блогах і місцеві новини. Внутрішня російська пропаганда, російська пропаганда, спрямована на треті країни.  
 До неактуальних відносяться тексти, які не стосуються України. Приміром, внутрішні  новини РФ про міжнародні візити посадовців або місцеві події. Міжнародні новини, в яких немає згадок про Україну, теж відносяться до “інше”.<br>
 
-Finally we detected only emotional manipulations and manipulative arguments. Th notion of clickbait headlines turned to be ambiguous and we did not manage to build working classifier for this type of manipulation. The rest of manipulations occured rarely and there were not enough positive examples for training.
+Finally we detected only emotional manipulations and manipulative arguments. The notion of clickbait headlines turned to be ambiguous and we did not manage to build working classifier for this type of manipulation. The rest of manipulations occured rarely and there were not enough positive examples for training.
 
 
 ### Classification 
