@@ -114,4 +114,4 @@ Values of classifier prediction:
 ROC-curves for classifiers (built on validation set):
 
 ![ROC-curve Russian](img/roc_ru.png)
-![ROC-curve Ukraininan](img/roc_uk.png)
+![ROC-curve Ukrainian](img/roc_uk.png)
