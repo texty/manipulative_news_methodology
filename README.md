@@ -111,3 +111,7 @@ Values of classifier prediction:
 | emotional         | > 0.34   | > 0.36 |
 | arguments         | > 0.5    | > 0.55 |
 
+ROC-curves for classifiers (built on validation set):
+
+![ROC-curve Russian](img/roc_ru.png)
+![ROC-curve Ukraininan](img/roc_uk.png)
