@@ -111,8 +111,48 @@ Values of classifier prediction:
 | emotional         | > 0.34   | > 0.36 |
 | arguments         | > 0.5    | > 0.55 |
 
-ROC-curves for classifiers (built on validation set):
+#### Below you can find metrics and details about classifiers
+##### ROC-curves for classifiers (built on validation set):
 
 ROC-curve Russian          |  ROC-curve Ukrainian
 :-------------------------:|:-------------------------:
 ![](img/roc_ru.png)        |  ![](img/roc_uk.png)
+
+##### Language models' perplexities before and after finetuning
+LM on Wikipedia corpus was trained for max 30k dictionare, while in finetuning we used max 60k tokens 
+<table cellspacing="0" border="0">
+    <colgroup width="102"></colgroup>
+    <colgroup span="6" width="85"></colgroup>
+    <tr>
+        <td height="17" align="left"><br></td>
+        <td colspan=3 align="center" valign=middle>ru</td>
+        <td colspan=3 align="center" valign=middle>uk</td>
+    </tr>
+    <tr>
+        <td height="17" align="left"><br></td>
+        <td align="left">loss</td>
+        <td align="left">accuracy</td>
+        <td align="left">perplexity</td>
+        <td align="left">loss</td>
+        <td align="left">accuracy</td>
+        <td align="left">perplexity</td>
+    </tr>
+    <tr>
+        <td height="17" align="left">wiki lm</td>
+        <td align="right" sdval="6.2167" sdnum="1033;">6.2167</td>
+        <td align="right" sdval="0.161100432339391" sdnum="1033;">0.1611</td>
+        <td align="right" sdval="501.047045565212" sdnum="1033;">501.0470</td>
+        <td align="right" sdval="5.34244" sdnum="1033;">5.34244</td>
+        <td align="right" sdval="0.19629799760906" sdnum="1033;">0.1963</td>
+        <td align="right" sdval="209.022102507982" sdnum="1033;">209.0221</td>
+    </tr>
+    <tr>
+        <td height="17" align="left">after fine-tuning</td>
+        <td align="right" sdval="3.4486" sdnum="1033;">3.4486</td>
+        <td align="right" sdval="0.391530558996723" sdnum="1033;">0.3915</td>
+        <td align="right" sdval="31.456322615499" sdnum="1033;">31.4563</td>
+        <td align="right" sdval="3.53392" sdnum="1033;">3.5339</td>
+        <td align="right" sdval="0.371091168017848" sdnum="1033;">0.3711</td>
+        <td align="right" sdval="34.2579960919917" sdnum="1033;">34.2580</td>
+    </tr>
+</table>
