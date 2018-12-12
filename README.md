@@ -119,7 +119,7 @@ ROC-curve Russian          |  ROC-curve Ukrainian
 ![](img/roc_ru.png)        |  ![](img/roc_uk.png)
 
 ##### Language models' perplexities before and after finetuning
-LM on Wikipedia corpus was trained for max 30k dictionare, while in finetuning we used max 60k tokens 
+LM on Wikipedia corpus was trained for max 30k dictionary, while in finetuning we used max 60k tokens 
 <table cellspacing="0" border="0">
     <colgroup width="102"></colgroup>
     <colgroup span="6" width="85"></colgroup>
