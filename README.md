@@ -26,7 +26,7 @@ Data for the project are news from around 200 websites, collected from December 
 For every link from RSS or Facebook feed of site's page we downloaded full text and processed it using readability (by [Mozilla](https://github.com/mozilla/readability), and [Python readability](https://pypi.org/project/readability-lxml)) algorithm. Readability parsing errors occure in less than 5% of cases, without significant error rate for individual websites. Next we removed html tags and tokenized text.
 
 ### Annotation
-Please find annotation tool in [`annotator`](/cls_tool) folder.<br>
+Please find annotation tool in [`cls_tool`](/cls_tool) folder.<br>
 We invited journalists with experience as newsfeed editor to label training set for training. Totally we collected 1300 relevant annotated articles in Ukrainian and 6000 in Russian.<br>
 All annotators were interviewed, instructed about possible labels of manipulative news. During annotation we maintained Facebook group to discuss uncertainties and labeling in general. We controlled annotation quality by monitoring labels and time intervals between annotation (if time between two labels is enough to read the article).<br>
 Inintially we used the following labels for annotation, text exactly as it was written in annotator instruction:
