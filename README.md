@@ -1,5 +1,5 @@
 ### How we used NLP to analyse more then 2 millions of news items from hundreds of "junk sites"
-#### This is methodology for "We've got a bad news" project [in English](http://texty.org.ua/d/2018/mnews/eng/) 
+#### This is methodology for ["We've got a bad news" project](http://texty.org.ua/d/2018/mnews/eng/) (in English) 
 
 ### Repository structure
 * [`classifier`](/classifier) - scripts for training and applying language model classifier
