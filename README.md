@@ -92,6 +92,7 @@ ROC-curve Russian          |  ROC-curve Ukrainian
 ![](img/roc_ru.png)        |  ![](img/roc_uk.png)
 
 ##### Language models' perplexities before and after finetuning
+(Accuracy below is for language model, not for classifier. Roughly, it's share of corretly guessed words, conditioned on some imput word sequence)
 LM on Wikipedia corpus was trained for max 30k dictionary, while in finetuning we used max 60k tokens 
 <table cellspacing="0" border="0">
     <colgroup width="102"></colgroup>
