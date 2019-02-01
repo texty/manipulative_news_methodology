@@ -92,10 +92,10 @@ ROC-curve Russian          |  ROC-curve Ukrainian
 ![](img/roc_ru.png)        |  ![](img/roc_uk.png)
 
 ##### Modelled distribution of scores, share of positive examples (emotional news) in population is 20% 
-True Positive Rate: TPR = TP / (TP + FN) 
-True Negative Rate: TNR = TN / (TN + FP) 
-Geometric accuracy mean: GA = sqrt(TNR*TPR)
-TP - true positive, FP - false positive, etc
+* True Positive Rate: TPR = TP / (TP + FN) 
+* True Negative Rate: TNR = TN / (TN + FP) 
+* Geometric accuracy mean: GA = sqrt(TNR*TPR)
+* TP - true positive, FP - false positive, etc
 
 ![](./img/performance.png)
 
