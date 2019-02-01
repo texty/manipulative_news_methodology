@@ -76,7 +76,7 @@ For classification we change the last layer to feedforward network with 50 and t
 
 in final ranking we left only sites with more than 200 relevant news and more that 25% of manipulative news. It is simple aggregation of classification results.<br>
 
-Confusion matrix of classifier's prediction on test dataset (threshould=0.41, True = this is emotionally manipulative item):
+Confusion matrix of classifier's prediction on validation set (threshould=0.41, True = this is emotionally manipulative item):
 
 | Classifier's result ----->   | True       | False     |
 |-------------------|----------|--------|
@@ -84,14 +84,18 @@ Confusion matrix of classifier's prediction on test dataset (threshould=0.41, Tr
 | True        | 139   | 115 |
 | False         | 123    | 1138 |
 
-
-
-#### Below you can find metrics and details about classifiers
+ 
 ##### ROC-curves for classifiers (built on validation set):
 
 ROC-curve Russian          |  ROC-curve Ukrainian
 :-------------------------:|:-------------------------:
 ![](img/roc_ru.png)        |  ![](img/roc_uk.png)
+
+##### Modelled distribution of scores, share of positive examples in population is 20% 
+True Positive Rate: TPR = TP / (TP + FN)), True Negative Rate: TNR = TN / (TN + FP), Geometric accuracy mean: GA = sqrt(TNR*TPR)
+TP - true positive, etc
+![](./img/performance.png)
+
 
 ##### Language models' perplexities before and after finetuning
 (Accuracy below is for language model, not for classifier. Roughly, it's share of words, correсtly predicted by language model, after  some imput sequence)
