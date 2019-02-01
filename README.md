@@ -76,13 +76,15 @@ For classification we change the last layer to feedforward network with 50 and t
 
 in final ranking we left only sites with more than 200 relevant news and more that 25% of manipulative news. It is simple aggregation of classification results.<br>
 
-Values of classifier prediction:
+Confusion matrix of classifier's prediction on test dataset (threshould=0.41, True = this is emotionally manipulative item):
 
-| Type              | Uk       | Ru     |
+| Classifier's result ----->   | True       | False     |
 |-------------------|----------|--------|
-| relevance         | < 0.55   | < 0.67 |
-| emotional         | > 0.34   | > 0.36 |
-| arguments         | > 0.5    | > 0.55 |
+| Ground truth        |    |  |
+| True        | 139   | 115 |
+| False         | 123    | 1138 |
+
+
 
 #### Below you can find metrics and details about classifiers
 ##### ROC-curves for classifiers (built on validation set):
