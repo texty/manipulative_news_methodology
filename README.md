@@ -101,7 +101,8 @@ ROC-curve Russian          |  ROC-curve Ukrainian
 
 
 ##### Language models' perplexities before and after finetuning
-(Accuracy below is for language model, not for classifier. Roughly, it's share of words, correсtly predicted by language model, after  some imput sequence)
+(Accuracy below is for language model(LM), not for classifier. Roughly, it's share of words, correсtly predicted by language model, after  some imput sequence).
+
 LM on Wikipedia corpus was trained for max 30k dictionary, while in finetuning we used max 60k tokens 
 <table cellspacing="0" border="0">
     <colgroup width="102"></colgroup>
