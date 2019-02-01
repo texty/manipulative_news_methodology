@@ -1,4 +1,5 @@
-## Texty manipulative news project - methodology
+## How we used NLP to analise more then 2 millions of news items from hundreds of "junk sites"
+### This is methodology for "We've got a bad news" project [in English](http://texty.org.ua/d/2018/mnews/eng/) 
 
 ### Repository structure
 * [`classifier`](/classifier) - scripts for training and applying language model classifier
